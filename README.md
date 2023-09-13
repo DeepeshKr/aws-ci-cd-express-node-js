@@ -6,9 +6,7 @@ EC2 script on creation to install the CodeDeploy Agent:
 
 # nodejs-aws-codedeploy-pipeline
 
-How to set ci/cd for nodejs app with aws codeDeploy and aws codePipeline
 
-<a href="https://www.buymeacoffee.com/scaleupsaas"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=scaleupsaas&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 ## Installation instructions
 
