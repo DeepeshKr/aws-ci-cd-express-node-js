@@ -13,3 +13,10 @@ else
   echo "Creating ${DIR} directory"
   mkdir ${DIR}
 fi
+
+# Install Yarn
+npm install --global yarn
+
+# Run Yarn commands
+yarn --version
+

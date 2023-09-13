@@ -154,8 +154,10 @@ sudo pm2 startup # starts pm2 on computer boot
 sudo yum install -y ruby 
 ```
 
+codedeploy for Canada servers
+
 ```sh
-wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+wget https://aws-codedeploy-ca-central-1.s3.ca-central-1.amazonaws.com/latest/install
 ```
 
 ```sh
@@ -197,3 +199,44 @@ kill whatever is running
 kill -9 <pid_from_above_command>
 ```
 
+install caddy
+
+```sh
+sudo yum -y install yum-plugin-copr
+sudo yum -y copr enable @caddy/caddy epel-7-$(arch)
+sudo yum -y install caddy
+```
+
+start and enable caddy while checking for status
+
+```sh
+sudo systemctl start caddy
+sudo systemctl status caddy
+sudo systemctl enable caddy
+
+```
+
+
+###Full bash script file to include for the entire process
+
+```sh
+
+#!/bin/bash
+sudo yum -y update
+sudo yum -y install ruby
+sudo yum -y install wget
+cd /home/ec2-user
+wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+
+
+sudo yum -y install yum-plugin-copr
+sudo yum -y copr enable @caddy/caddy epel-7-$(arch)
+sudo yum -y install caddy
+
+sudo systemctl start caddy
+sudo systemctl enable caddy
+
+
+```
