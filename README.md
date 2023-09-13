@@ -109,11 +109,29 @@ npm install -g pm2 # may require sudo
 ```sh
 sudo ln -s "$(which node)" /sbin/node
 ```
+to undo the above do this
+```sh
+sudo unlink /sbin/node
+
+```
+
 ```sh
 sudo ln -s "$(which npm)" /sbin/npm
 ```
+
+to undo the above do this
+```sh
+sudo unlink /sbin/npm
+```
+
+
 ```sh
 sudo ln -s "$(which pm2)" /sbin/pm2
+```
+
+to undo the above do this
+```sh
+sudo unlink /sbin/pm2
 ```
 
 ### 8 Starting the app as sudo (Run nodejs in background and when server restart)
@@ -163,3 +181,19 @@ Uninstall CodeDeploy Agent:
 ```sh
 sudo yum erase codedeploy-agent
 ```
+
+find out what's running on port 3000
+
+```sh
+
+lsof -i tcp:3000
+
+```
+
+kill whatever is running
+
+```sh
+
+kill -9 <pid_from_above_command>
+```
+
